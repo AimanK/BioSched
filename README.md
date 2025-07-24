@@ -2,7 +2,6 @@
 # 🚀 BioSched
 
 BioSched is a full-stack biometric appointment scheduling and verification system tailored for federal and immigration processes. It enables secure appointment handling, background verification, and user management with clearly defined role-based workflows.
-
 ---
 
 ## 🧱 Tech Stack
