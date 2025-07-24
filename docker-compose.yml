@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8
+    container_name: biosched-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: biosched_db
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - biosched-net
+
+volumes:
+  db_data:
+
+networks:
+  biosched-net:
