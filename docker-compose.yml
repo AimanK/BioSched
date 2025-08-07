@@ -1,0 +1,34 @@
+services:
+  app:
+      build: .
+      depends_on:
+      - mysql
+      environment:
+        JWT_SECRET: ${JWT_SECRET}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      ports:
+        - "8080:8080"
+      env_file:
+      - .env
+      networks:
+      - biosched-net
+  mysql:
+    image: mysql:8
+    container_name: biosched-mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - biosched-net
+
+volumes:
+  db_data:
+
+networks:
+  biosched-net:
