@@ -15,4 +15,21 @@ src/main/resources/application.properties
 
 .env
 
+# Maven build output
+/target
+*.jar
+*.class
+
+# macOS file
+.DS_Store
+
+# IDE/Tooling junk
+*.lst
+.settings/
+
+# Ignore all application.properties files
+src/main/resources/application.properties
+
+.env
+
 
